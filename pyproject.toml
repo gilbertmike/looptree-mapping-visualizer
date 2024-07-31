@@ -1,0 +1,21 @@
+[project]
+name = "looptree_mapping_visualizer"
+version = "1.0.0"
+authors = [
+    { name="Michael Gilbert", email="gilbertm@mit.edu" }
+]
+description = "Generate DOT file from LoopTree mapping YAML"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "ruamel.yaml==0.18.0"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
