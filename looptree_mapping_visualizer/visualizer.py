@@ -86,12 +86,12 @@ def _make_node_label(
     node: Mapping
 ):
     if node['type'] == 'temporal':
-        return f"temporal; rank {node['dimension']}; tile size {node['tile_size']}"
+        return f"for {node['dimension'].lower()} in [0,,{node['tile_size']})"
     elif node['type'] == 'spatial':
-        return f"spatial; rank {node['dimension']}; tile size {node['tile_size']}"
+        return f"sfor {node['dimension'].lower()} in [0,,{node['tile_size']})"
     elif node['type'] == 'storage':
         dspaces_str = ', '.join(node['dspace'])
-        return f"{dspaces_str} in buffer {node['target']}"
+        return f"{dspaces_str} in buf {node['target']}"
     elif node['type'] == 'compute':
         return f"{node['einsum']}"
     else:
