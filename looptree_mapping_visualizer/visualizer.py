@@ -14,8 +14,9 @@ TYPE_TO_SHAPE = {
 
 
 class DotFile:
-    def __init__(self):
+    def __init__(self, ranksep=0):
         self.content = ''
+        self.content += f'ranksep={ranksep};\n'
 
     def add_node(
         self,
